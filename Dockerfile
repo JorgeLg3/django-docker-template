@@ -39,7 +39,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 # Copy the environment and the source code
 COPY --from=builder /app/.venv /app/.venv
-COPY . .
+COPY --from=builder . .
 
 EXPOSE 8000
 
