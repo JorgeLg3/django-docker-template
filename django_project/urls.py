@@ -1,4 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [path("admin/", admin.site.urls), path("", include("blogs.urls"))]
+urlpatterns = [
+    path("", include("pages.urls")),
+    path("admin/", admin.site.urls), 
+]
