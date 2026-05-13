@@ -1,13 +1,14 @@
-# The JorgeLab blog
+# Django docker template
 ## Introduction
-This is the codebase of my personal blog using Django framework.
+This is the codebase I have developed as template repo for future Django app developements. Including basic features and configurations ready to go
+- Custom User model in case you need to customize the UserModel later on.
+- Using SQLite in production. SQLite has shown enough performance with the proper settings to be used in production for a lot of use cases
 - Using UV for project and dependencies management
 - The app uses Docker to contain all the code and dependencies
-- Github workflows included the build the image and upload it to GH container registry
-- Using SQLite in production. SQLite has shown enough performance with the proper settings to be used in production for a lot of use cases
 - With the use of bind volumes for the `/media` and `/db-data` you can persist the app data while changing the app code.
 - Whitenoise used for manage the staticfiles
 - The migrate script is run as part of the Dockerfile entry script. While not ideal, it's safe enough with Django and perfectly valid for my use case. If you prefer to run it separately just remove that part of the `Dockerfile` and use something like: `docker compose run --rm django-app python manage.py migrate --noinput`
+- Github workflows included the build the image and upload it to GH container registry
 
 ## Local development
 To run the Django server, first copy the `.example.env` and rename it to `.env`. And then change the values on your interest. The `SECRET_KEY` can be generated with `python3 -c "import secrets; print(secrets.token_urlsafe())"`
