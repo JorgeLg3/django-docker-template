@@ -5,7 +5,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./data/db:/app/db
+      - ./data/db-data:/app/db-data
       - ./data/media:/app/media
     environment:
       DEBUG: false
