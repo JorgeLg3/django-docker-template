@@ -8,6 +8,7 @@ dependencies = [
     "django>=6.0.5",
     "environs[django]>=15.0.1",
     "gunicorn>=26.0.0",
+    "pillow>=12.2.0",
     "whitenoise>=6.12.0",
 ]
 
